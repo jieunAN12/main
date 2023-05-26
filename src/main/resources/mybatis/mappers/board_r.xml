@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- DAO에서 지정해준 이름과 동일하게 -->
+<mapper namespace="board_r">
+
+<select id="listall" resultType="board_r">
+
+<include refid="pagingHeader"></include>
+select rownum, bno, title, bcontent, b.regdate, viewcnt, userName,
+(select count(*) from reply where bno=b.bno) as recnt
+from tb_board b, tb_member m
+<!-- where절을 include 태그로 삽입 -->
+<include refid="search"></include>
+order by bno desc, b.regdate desc
+<include refid="pagingFooter"></include>
+</select>
+
+<select id="contArticle" resultType="int">
+select count(*) from tb_board b, tb_member m
+<!-- where절을 include 태그로 삽입 -->
+<include refid="search"></include>
+</select>
+
+<!-- sql code 조각 -->
+<!-- 반복되는 sql의 일부를 sql태그를 이요하여 따로 빼둘수 있다. -->
+<sql id="search">
+	<choose>
+		<!-- 검색옵션이 전체 검색일경우 -->
+		<when test="searchOption == 'all'">
+			where b.writer = m.userId
+			and(
+			userName like '%'||#{keyword}||'%'
+			or bcontent like '%'||#{keyword}||'%'
+			or title like '%'||#{keyword}||'%'
+			)
+		</when>
+		<!-- 그 외의 경우 -->
+		<otherwise>
+		 where b.writer = m.userId
+		 and ${searchOption} like '%'||#{keyword}||'%'
+		</otherwise>
+	</choose>
+</sql>
+
+<sql id="pagingHeader">
+select * from (
+	select rownum as rn, A. * from(
+</sql>
+
+<sql id="pagingFooter">
+) A
+) where rn between #{start} and #{end}
+</sql>
+
+<insert id="insert" parameterType="board_r">
+insert into tb_board(bno, title, bcontent, writer)
+values(rboard_seq.nextval, #{title}, #{bcontent}, #{writer}
+)
+</insert>
+
+<select id="view" resultType="board_r">
+select * from tb_board
+where bno = #{bno}
+</select>
+
+<update id="increaseViewcnt" parameterType="int">
+update tb_board set viewcnt = viewcnt + 1
+where bno = #{bno}
+</update>
+
+<update id="update" parameterType="board_r">
+update tb_board set title = #{title}, bcontent = #{bcontent}
+where bno = #{bno} 
+</update>
+
+<delete id="delete" parameterType="int">
+delete from tb_board where bno = #{bno}
+</delete>
+
+
+</mapper>

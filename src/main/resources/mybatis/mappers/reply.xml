@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- DAO에서 지정해준 이름과 동일하게 -->
+<mapper namespace="reply">
+
+<insert id="insertReply" parameterType="reply">
+	insert into reply (rno, bno, replytext, replyer)
+	values(reply_seq.nextval, #{bno}, #{replytext}, #{replyer})
+</insert>
+
+<select id="listReply" resultType="reply">
+	select rno, bno, replytext, replyer, m.userName, r.regdate, r.updatedate
+	From reply r, tb_member m
+	where r.replyer = m.userId and bno = #{bno}
+	order by rno
+
+</select>
+
+</mapper>
