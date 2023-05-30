@@ -6,12 +6,18 @@
 <typeAlias type="com.an.dto.MemberVO" alias="member"/>
 <typeAlias type="com.an.dto.ReplyDTO" alias="reply"/>
 <typeAlias type="com.an.dto.BoardVO" alias="board_r"/>
+<typeAlias type="com.an.dto.ProductVO" alias="product"/>
+<typeAlias type="com.an.dto.CartVO" alias="cart"/>
+<typeAlias type="com.an.dto.AdminVO" alias="admin"/>
 </typeAliases>
 
 <mappers>
 <mapper resource="mybatis/mappers/member.xml" />
 <mapper resource="mybatis/mappers/reply.xml" />
 <mapper resource="mybatis/mappers/board_r.xml" />
+<mapper resource="mybatis/mappers/product.xml" />
+<mapper resource="mybatis/mappers/cart.xml" />
+<mapper resource="mybatis/mappers/admin.xml" />
 </mappers>
 
 </configuration>

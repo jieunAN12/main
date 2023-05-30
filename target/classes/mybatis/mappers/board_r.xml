@@ -56,7 +56,7 @@ select * from (
 
 <insert id="insert" parameterType="board_r">
 insert into tb_board(bno, title, bcontent, writer)
-values(rboard_seq.nextval, #{title}, #{bcontent}, #{writer}
+values(tb_board_seq.nextval, #{title}, #{bcontent}, #{writer}
 )
 </insert>
 

@@ -10,7 +10,16 @@ public class MemberVO {
 	private String userEmail;
 	private Date userRegdate;
 	private Date userUpdatedate;
+	private String userAuth;
 	
+
+	public String getUserAuth() {
+		return userAuth;
+	}
+
+	public void setUserAuth(String userAuth) {
+		this.userAuth = userAuth;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -63,7 +72,8 @@ public class MemberVO {
 	@Override
 	public String toString() {
 		return "MemberVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userEmail="
-				+ userEmail + ", userRegdate=" + userRegdate + ", userUpdatedate=" + userUpdatedate + "]";
+				+ userEmail + ", userRegdate=" + userRegdate + ", userUpdatedate=" + userUpdatedate + ", userAuth="
+				+ userAuth + "]";
 	}
 
 }

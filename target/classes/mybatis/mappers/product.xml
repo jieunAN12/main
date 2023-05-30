@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+
+<select id="listProduct" resultType="product">
+select productId, productName, productPrice, productDesc, productUrl
+from tb_product
+order by productName
+</select>
+
+<select id="detailProduct" resultType="product">
+select productId, productName, productPrice, productDesc, productUrl
+from tb_product
+where productId = #{productId}
+</select>
+
+<insert id="insertProduct" parameterType="product">
+	insert into tb_product
+	values(tb_product_seq.nextval, #{productName}, #{productPrice}, #{productDesc}, #{productUrl}
+	 )
+</insert>
+
+<update id="updateProduct" parameterType="product">
+update tb_product set
+productName = #{productName},
+productPrice = #{productPrice},
+productDesc = #{productDesc},
+productUrl = #{productUrl}
+where productId = #{productId}
+</update>
+
+<delete id="deleteProduct" parameterType="product">
+delete from tb_product
+where productId = #{productId}
+</delete>
+
+<select id="fileInfo" resultType="String">
+select productUrl
+from tb_product
+where productId = #{productId}
+</select>
+
+
+</mapper>

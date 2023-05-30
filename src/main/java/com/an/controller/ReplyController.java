@@ -5,17 +5,16 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.an.dto.ReplyDTO;
 import com.an.service.ReplyService;
 
-@RestController
+@Controller
 //@RequestMapping("/relay/*")
 public class ReplyController {
 
@@ -35,7 +34,7 @@ public class ReplyController {
 	   @RequestMapping("rlist.do") 
 	   public ModelAndView rlist(@RequestParam int bno, ModelAndView mav) {
 		   List<ReplyDTO> rlist = replyService.rlist(bno); //뷰 이름 지정
-		   mav.setViewName("replyList.jsp"); //부에 전달할 데이터 지정 
+		   mav.setViewName("/board/replyList.jsp"); //부에 전달할 데이터 지정 
 		   mav.addObject("rlist", rlist); //replyList.jsp로 포워딩 
 		   return mav;
 	   }

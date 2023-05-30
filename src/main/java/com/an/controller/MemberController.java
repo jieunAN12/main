@@ -19,7 +19,7 @@ public class MemberController {
 	
 	@RequestMapping(value="/login.do")
 	public String login() {
-		return "/login.jsp";
+		return "/member/login.jsp";
 	}
 	
 	@RequestMapping(value="/index.do")
@@ -50,19 +50,19 @@ public class MemberController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/memberForm",method={RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/memberForm.do",method={RequestMethod.GET, RequestMethod.POST})
 	public String memberForm() {
-		return "/member.jsp";
+		return "/member/member.jsp";
 	}
 	
-	@RequestMapping(value="/member",method={RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/member.do",method={RequestMethod.GET, RequestMethod.POST})
 	public String member(@ModelAttribute MemberVO vo) {
 		int memberresult = memberservice.member(vo);
 		if(memberresult > 0) {
 			return "redirect:/login.do";
 		}else {
 			System.out.println("없음");
-			return "redirect:/memberForm";
+			return "redirect:/memberForm.do";
 		}
 	}
 

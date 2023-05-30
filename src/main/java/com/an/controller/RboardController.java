@@ -48,14 +48,14 @@ public class RboardController {
 		//모델과 뷰
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("map", map);//데이터를 저장
-		mav.setViewName("list.jsp");//뷰를 list.jsp로 설정
+		mav.setViewName("/board/list.jsp");//뷰를 list.jsp로 설정
 
 		return mav;//list.jsp List가 전달된다.
 	}
 	
 	@RequestMapping(value="write.do", method={RequestMethod.GET, RequestMethod.POST})
 	public String write() {
-		return "write.jsp";
+		return "/board/write.jsp";
 	}
 	
 	@RequestMapping(value="insert.do", method={RequestMethod.GET, RequestMethod.POST})
@@ -73,7 +73,7 @@ public class RboardController {
 		//모델(데이터)+뷰(화면)을 함꼐 전달하는 객체
 		ModelAndView mav = new ModelAndView();
 		//뷰의 이름
-		mav.setViewName("view.jsp");
+		mav.setViewName("/board/view.jsp");
 		//뷰에 전달할 데이터
 		mav.addObject("dto", rboardService.read(bno));
 		return mav;

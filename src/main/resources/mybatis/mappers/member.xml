@@ -18,9 +18,9 @@ where userId = #{userId} and userPw = #{userPw}
 
 <insert id="join" parameterType="member">
 <![CDATA[
-insert into tb_member (userId, userPw, userName, userEmail)
+insert into tb_member (userId, userPw, userName, userEmail, userAuth)
 values(
-#{userId}, #{userPw}, #{userName}, #{userEmail}
+#{userId}, #{userPw}, #{userName}, #{userEmail}, #{userAuth}
 )
 ]]>
 

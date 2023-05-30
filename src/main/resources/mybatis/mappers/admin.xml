@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin">
+
+<select id="loginCheck" resultType="String">
+select userName
+from tb_admin
+where userId = #{userId} and userPw = #{userPw}
+</select>
+
+<select id="viewMember" resultType="member">
+select * from tb_member m, tb_admin a
+where m.userId = a.userId and m.userAuth = #{userAuth}
+</select>
+
+<insert id="join" parameterType="admin">
+<![CDATA[
+insert into tb_admin (userId, userPw, userName, userEmail)
+values(
+#{userId}, #{userPw}, #{userName}, #{userEmail}
+)
+]]>
+
+</insert>
+
+</mapper>
