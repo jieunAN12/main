@@ -24,7 +24,7 @@ public class RboardController {
 	@Inject
 	RboardService rboardService;
 	
-	@RequestMapping("list.do")
+	@RequestMapping("/list.do")
 	public ModelAndView list(@RequestParam(defaultValue="title") String searchOption,
 							@RequestParam(defaultValue="") String keyword,
 							@RequestParam(defaultValue="1") int curPage){

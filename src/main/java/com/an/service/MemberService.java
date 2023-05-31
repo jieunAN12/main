@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import com.an.dao.MemberDAO;
+import com.an.dto.BoardVO;
 import com.an.dto.MemberVO;
 
 @Service
@@ -38,4 +39,6 @@ public class MemberService {
 		//세션 정보를 초기화 시킴
 		session.invalidate();
 	}
+	
+
 }

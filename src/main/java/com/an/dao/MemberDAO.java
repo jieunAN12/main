@@ -31,4 +31,13 @@ public class MemberDAO {
 		
 	}
 
+	public MemberVO upmemberForm(String userId) {
+		System.out.println("dao"+userId);
+		return sql.selectOne("member.updateForm", userId);
+	}
+	
+	public void update(MemberVO vo) {
+		sql.update("member.update", vo);
+	}
+
 }

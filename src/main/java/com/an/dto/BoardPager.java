@@ -2,7 +2,7 @@ package com.an.dto;
 
 public class BoardPager {
 	//레이지당 게시물 수
-	public static final int PAGE_SCALE = 10;
+	public static final int PAGE_SCALE = 5;
 	//화면 당 페이지 수
 	public static final int BLOCK_SCALE = 10;
 	
@@ -26,7 +26,7 @@ public class BoardPager {
 	//생성자
 	//BoardPager(레코드 갯수, 현재 페이지 번호)
 	public BoardPager(int count, int curPage) {
-		curBlock = 1;//현재 페이지 블록 번호
+		curBlock = 0;//현재 페이지 블록 번호
 		this.curPage = curPage;//현재 페이지 설정
 		setTotPage(count);//전체 페이지 갯수 계산
 		setPageRange();
