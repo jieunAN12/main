@@ -24,7 +24,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<%@ include file="body1.jsp"%>
+<%@ include file="../body1.jsp"%>
 <%@ include file="menu.jsp" %>
 <h2> 상품 목록 </h2>
 

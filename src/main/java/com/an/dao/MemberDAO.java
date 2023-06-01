@@ -1,5 +1,9 @@
 package com.an.dao;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -32,12 +36,32 @@ public class MemberDAO {
 	}
 
 	public MemberVO upmemberForm(String userId) {
-		System.out.println("dao"+userId);
-		return sql.selectOne("member.updateForm", userId);
+		return sql.selectOne("member.upmemberForm",userId);
 	}
-	
-	public void update(MemberVO vo) {
-		sql.update("member.update", vo);
+
+	public List<MemberVO> memberList() {
+		return sql.selectList("member.memberList");
 	}
+
+	public void upmember(MemberVO vo) {
+		sql.update("member.upmember", vo);
+	}
+
+	public void deletemember(String userId) {
+		sql.delete("member.deletemember", userId);
+	}
+
+	public boolean checkPw(String userId, String userPw) {
+		boolean result = false;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("userId", userId);
+		map.put("userPw", userPw);
+		int count = sql.selectOne("member.checkPw", map);
+		if(count == 1) {
+			result = true;
+		}
+		return result;
+	}
+
 
 }

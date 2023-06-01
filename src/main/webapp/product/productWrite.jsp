@@ -61,7 +61,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<%@ include file="body1.jsp"%>
+<%@ include file="../body1.jsp"%>
 <%@ include file="menu.jsp" %>
 <h2>상품 등록</h2>
 <form name="form1" enctype="multipart/form-data" method="post" action="/main/pinsert.do">

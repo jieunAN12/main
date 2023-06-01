@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 
 			<h2>게시글 목록</h2>
 

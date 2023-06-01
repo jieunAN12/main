@@ -35,7 +35,7 @@
 </script>
 </head>
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 <h2>관리자 로그인</h2>
 	<form name="form1" method="post">
 		<table border="1" width="400px">

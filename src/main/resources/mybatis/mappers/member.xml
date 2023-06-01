@@ -26,4 +26,31 @@ values(
 
 </insert>
 
+<select id="upmemberForm" resultType="member">
+select userName, userId, userEmail, userRegdate
+from tb_member
+where userId = #{userId}
+</select>
+
+<select id="memberList" resultType="member">
+select userName, userId, userEmail, userRegdate
+from tb_member
+order by userId
+</select>
+
+<update id="upmember" parameterType="member">
+update tb_member set
+userPw = #{userPw}, userName=#{userName}, userEmail=#{userEmail}
+where userId = #{userId}
+</update>
+
+<delete id="deletemember" parameterType="String">
+delete from tb_member where userId = #{userId}
+</delete>
+
+<select id="checkPw" resultType="int">
+	select count(*) from tb_member
+	where userId = #{userId} and userPw = #{userPw}
+</select>
+
 </mapper>

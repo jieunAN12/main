@@ -72,8 +72,7 @@ $(document).ready(function() {
 		day = date.getDate();
 		hour = date.getHours();
 		minute = date.getMinutes();
-		second = date.getSeconds();
-		strDate = year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
+		strDate = year+"-"+month+"-"+day+" "+hour+":"+minute;
 		return strDate;
 	} 
 	
@@ -81,7 +80,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 
 <h2>게시글 보기</h2>
 

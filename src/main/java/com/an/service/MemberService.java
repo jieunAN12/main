@@ -1,12 +1,13 @@
 package com.an.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
 import com.an.dao.MemberDAO;
-import com.an.dto.BoardVO;
 import com.an.dto.MemberVO;
 
 @Service
@@ -39,6 +40,26 @@ public class MemberService {
 		//세션 정보를 초기화 시킴
 		session.invalidate();
 	}
+
+	public List<MemberVO> memberList() {
+		return dao.memberList();
+	}
 	
+	public MemberVO upmemberForm(String userId) {
+		return dao.upmemberForm(userId);
+	}
+
+	public void upmember(MemberVO vo) {
+		dao.upmember(vo);
+	}
+
+	public void deletemember(String userId) {
+		dao.deletemember(userId);
+	}
+
+	public boolean checkPw(String userId, String userPw) {
+		return dao.checkPw(userId, userPw);
+	}
+
 
 }

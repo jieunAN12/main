@@ -6,7 +6,7 @@
 	<title>Home</title>
 </head>
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 <%@ include file="menu.jsp" %>
 	<c:if test="${msg == 'success'}">
 	<h2>${sessionScope.adminName}

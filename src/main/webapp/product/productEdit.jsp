@@ -51,7 +51,7 @@ $(document).ready(function(){
 </head>
 
 <body>
-<%@ include file="body1.jsp"%>
+<%@ include file="../body1.jsp"%>
 <%@ include file="menu.jsp" %>
 <h2>상품 정보/삭제</h2>
 <form id="form1" name="form1" enctype="multipart/form-data" method="post">

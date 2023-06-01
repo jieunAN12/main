@@ -32,7 +32,7 @@
 </script>
 </head>
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 
 	<h2>게시글 작성</h2>
 	<form name="form1" method="post" action="${path}/main/insert.do">

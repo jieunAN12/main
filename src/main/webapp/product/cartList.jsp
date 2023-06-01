@@ -22,7 +22,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<%@ include file="body1.jsp"%>
+<%@ include file="../body1.jsp"%>
 <%@ include file="menu.jsp" %>
 
 <h2>장바구니 확인</h2>

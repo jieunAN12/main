@@ -6,7 +6,7 @@
 <title>회원가입</title>
 
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 <!-- 본문 시작 bbsForm.jsp-->
 <form method="post" action="member.do" name="memberForm.do">
 	<table width="450" border="1" align="center" cellspacing="0" cellpadding="5">

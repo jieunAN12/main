@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../header.jsp"%>
 
-<a href="/main/list.do">게시판</a> |
+<a href="/main/upmemberForm.do">회원정보수정</a> |
 <a href="/main/plist.do">상품목록</a> |
 <a href="/main/clist.do">장바구니</a> |
 

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<%@ include file="body1.jsp"%>
+<%@ include file="../body1.jsp"%>
 <%@ include file="menu.jsp" %>
 <h2>상품 상세정보</h2>
 

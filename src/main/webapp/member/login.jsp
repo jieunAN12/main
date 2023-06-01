@@ -30,7 +30,7 @@ $(document).ready(function() {
 </head>
 
 <body>
-<%@ include file="body1.jsp" %>
+<%@ include file="../body1.jsp" %>
 
 	<!-- 본문 시작 bbsForm.jsp-->
 	<h2>로그인</h2>
