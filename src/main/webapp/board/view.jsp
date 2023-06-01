@@ -65,17 +65,6 @@ $(document).ready(function() {
 		});
 	}
 	
-	function changeDate(date){
-		date = new Date(perseInt(date));
-		year = date.getFullYear();
-		month = date.getMonth();
-		day = date.getDate();
-		hour = date.getHours();
-		minute = date.getMinutes();
-		strDate = year+"-"+month+"-"+day+" "+hour+":"+minute;
-		return strDate;
-	} 
-	
 });
 </script>
 </head>

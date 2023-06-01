@@ -80,12 +80,12 @@
 
 	var timer1, timer2; // 전역변수
 	var ctnt = [];
-	ctnt[0] = "<img src='/main/img/r_1.jpg'>";
-	ctnt[1] = "<img src='img/r_2.jpg'>";
-	ctnt[2] = "<img src='img/r_3.jpg'>";
-	ctnt[3] = "<img src='img/r_4.jpg'>";
-	ctnt[4] = "<img src='img/r_1.jpg'>";
-	ctnt[5] = "<img src='img/r_2.jpg'>";
+	ctnt[0] = "<img src='img/cap1.png'>";
+	ctnt[1] = "<img src='img/cap2.png'>";
+	ctnt[2] = "<img src='img/cap3.png'>";
+	ctnt[3] = "<img src='img/model1.jpg'>";
+	ctnt[4] = "<img src='img/cap1.png'>";
+	ctnt[5] = "<img src='img/cap2.png'>";
 
 	function start() { // 그림배치
 		for (idx = 0; idx < ctnt.length; idx++) {
