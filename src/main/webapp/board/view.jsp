@@ -104,20 +104,24 @@ $(document).ready(function() {
 
  <!--  댓글 목록 -->
 <br>
+
 <form action="/main/rinsert.do" method="post">
 	<input type="hidden" name="bno" value="${dto.bno }">
-		<table width="500" border="1">
-			<tr>
-				<td>
-				<textarea rows="3" cols="55" placeholder="내용을 작성하세요" name="replytext" required="required"></textarea>
-				</td>
-				<td>
-					<button>등록하기</button>
-				</td>
-			</tr>
-
-		</table>
-<div id="listReply"></div>
-</form> 
+		<c:if test="${sessionScope.userId != null }">
+			<table width="500" border="1">
+				<tr>
+					<td>
+					<textarea rows="3" cols="55" placeholder="내용을 작성하세요" name="replytext" required="required"></textarea>
+					</td>
+					<td>
+						<button>등록하기</button>
+					</td>
+				</tr>
+			</table>
+		</c:if> 
+	<h2>댓글list</h2>
+	<hr>
+	<div id="listReply"></div>
+</form>
 
 <%@ include file="../footer.jsp" %>

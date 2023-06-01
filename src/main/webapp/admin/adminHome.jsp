@@ -10,7 +10,7 @@
 <%@ include file="menu.jsp" %>
 	<c:if test="${msg == 'success'}">
 	<h2>${sessionScope.adminName}
-	(${sessionScope.adminId})님 오셨슴까~~.</h2>
+	(${sessionScope.adminId})님 오셨습니까~~</h2>
 	</c:if>
 	
 	${result}

@@ -14,7 +14,7 @@
 	select rno, bno, replytext, replyer, m.userName, r.regdate, r.updatedate
 	From reply r, tb_member m
 	where r.replyer = m.userId and bno = #{bno}
-	order by rno
+	order by rno desc
 </select>
 
 </mapper>

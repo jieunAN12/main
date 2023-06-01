@@ -24,13 +24,12 @@
 			<div class="col-3 col-m-3 menu">
 				<!-- 왼쪽 카테고리 -->
 				<ul>
-					<li><a href="/main/index.do">메인으로 가기</a></li>
-						<c:if test="${sessionScope.adminId != null}">
+					<c:if test="${sessionScope.adminId != null}">
 						<li><a href="/main/memberList.do">회원관리</a></li>
-						</c:if>
-						<c:if test="${sessionScope.adminId == null}">
+					</c:if>
+					<c:if test="${sessionScope.adminId == null}">
 						<li><a href="/main/alogin.do">관리자로그인</a></li>
-						</c:if>
+					</c:if>
 					<li><a href="/main/list.do">게시판</a></li>
 					<li><a href="/main/plist.do">쇼핑</a></li>
 				</ul>

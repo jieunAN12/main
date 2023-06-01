@@ -95,7 +95,7 @@
 			document.write(ctnt[idx]);
 			document.write("</div>");
 		}
-		setTimeout("scroll()", 3000);
+		setTimeout("scroll()", 5000);
 	} //end
 
 	function scroll() { //이미지 스크롤
@@ -129,4 +129,4 @@
 			</div>
 			<!-- 본문 끝 -->
 			
-<%@ include file="footer.jsp" %>
+<%@ include file="footer1.jsp" %>
