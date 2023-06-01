@@ -12,7 +12,6 @@ public class CartVO {
 	private int money;//상품가격
 	
 	
-
 	public CartVO() {
 		super();
 	}

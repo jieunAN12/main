@@ -89,9 +89,7 @@
 
 	function start() { // 그림배치
 		for (idx = 0; idx < ctnt.length; idx++) {
-			document.write("<div id='area" + idx
-					+ "'  style='position:absolute;top:0px;left:" + (idx * 200)
-					+ "px;'>");
+			document.write("<div id='area" + idx + "'style='position:absolute;top:0px;left:" + (idx * 200) + "px;'>");
 			document.write(ctnt[idx]);
 			document.write("</div>");
 		}
@@ -129,4 +127,4 @@
 			</div>
 			<!-- 본문 끝 -->
 			
-<%@ include file="footer1.jsp" %>
+<%@ include file="footer.jsp" %>

@@ -20,6 +20,8 @@ insert into tb_board(bno, title, bcontent, writer)
 values(rboard_seq.nextval, '제목이다', '내용이다', '작성자'
 );
 
+alter table tb_board add(boardShow varchar2(3));
+
 create table tb_member(
 userId varchar2(50) primary key,
 userPw varchar2(50),

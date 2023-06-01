@@ -86,5 +86,13 @@ $(document).ready(function(){
 		</tr>
 	</table>
 </form>
+    </div>
 
-<%@ include file="../footer.jsp"%>
+    <div class="col-3 col-m-12">
+      <div class="aside">
+        <img src='../img/pika.gif' width="350" height="210">
+        </div>
+    </div>
+
+  </div>
+<%@ include file="../footer1.jsp"%>

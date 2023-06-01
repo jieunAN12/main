@@ -15,6 +15,7 @@ from tb_board b, tb_member m
 <include refid="search"></include>
 order by bno desc, b.regdate desc
 <include refid="pagingFooter"></include>
+
 </select>
 
 <select id="contArticle" resultType="int">

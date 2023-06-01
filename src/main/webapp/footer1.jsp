@@ -15,15 +15,6 @@
 	font-weight: bold;
 }
 </style>
-    </div>
-
-    <div class="col-3 col-m-12">
-      <div class="aside">
-        <img src='img/pika.gif' width="350" height="210">
-        </div>
-    </div>
-
-  </div>
 
   <div class="footer">
       <p>Copyright &copy; 2023 An jieun</p>
