@@ -64,10 +64,9 @@ public class MemberDAO {
 	}
 
 	public MemberVO idCheck(String userId) {
-		MemberVO membervo = sql.selectOne("member.idCheck", userId);
-		System.out.println(membervo);
-		return membervo;
+		MemberVO vo = sql.selectOne("member.idCheck", userId);
+		System.out.println(vo);
+		return vo;
 	}
-
 
 }

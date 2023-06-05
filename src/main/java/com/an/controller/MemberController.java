@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,9 +44,10 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping(value="/idCheck.do",method={RequestMethod.GET, RequestMethod.POST})
 	public MemberVO idCheck(@RequestParam("userId") String userId) {
-		System.out.println("idcheck"+userId);
-		MemberVO membervo = memberservice.idCheck(userId);
-		return membervo;
+		System.out.println("idcheck = "+userId);
+		MemberVO vo = memberservice.idCheck(userId);
+		System.out.println("컨트롤"+vo);
+		return vo;
 	}
 	
 	@RequestMapping(value="/loginCheck.do",method={RequestMethod.GET, RequestMethod.POST})

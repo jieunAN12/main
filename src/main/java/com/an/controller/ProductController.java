@@ -63,6 +63,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/edit/{productId}")
+	//public String edit(@requestParam("productId") int productId, Model model)
 	public ModelAndView edit(@PathVariable("productId") int productId, ModelAndView mav) {
 		mav.setViewName("/product/productEdit.jsp");
 		mav.addObject("vo", productService.detailProduct(productId));

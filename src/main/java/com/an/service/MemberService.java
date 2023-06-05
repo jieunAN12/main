@@ -21,9 +21,8 @@ public class MemberService {
 	}
 	
 	public MemberVO idCheck(String userId) {
-		MemberVO membervo = dao.idCheck(userId);
-		return membervo;
-		
+		MemberVO vo = dao.idCheck(userId);
+		return vo;
 	}
 
 	public boolean loginCheck(MemberVO vo, HttpSession session) {
