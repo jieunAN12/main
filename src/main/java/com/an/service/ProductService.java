@@ -2,8 +2,7 @@ package com.an.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,7 +12,7 @@ import com.an.dto.ProductVO;
 @Service
 public class ProductService {
 	
-	@Inject
+	@Autowired
 	ProductDAO dao;
 
 	public List<ProductVO> listProduct() {

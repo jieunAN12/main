@@ -2,9 +2,9 @@ package com.an.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.an.dao.MemberDAO;
@@ -13,11 +13,17 @@ import com.an.dto.MemberVO;
 @Service
 public class MemberService {
 	
-	@Inject
+	@Autowired
 	private MemberDAO dao;
 
 	public int member(MemberVO vo) {
 		return dao.member(vo);
+	}
+	
+	public MemberVO idCheck(String userId) {
+		MemberVO membervo = dao.idCheck(userId);
+		return membervo;
+		
 	}
 
 	public boolean loginCheck(MemberVO vo, HttpSession session) {

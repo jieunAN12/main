@@ -2,8 +2,7 @@ package com.an.controller;
 
 import java.io.File;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,7 @@ import com.an.service.ProductService;
 @Controller
 public class ProductController {
 
-	@Inject
+	@Autowired
 	ProductService productService;
 	
 	@RequestMapping("plist.do")

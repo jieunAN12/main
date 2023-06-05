@@ -32,6 +32,12 @@ from tb_member
 where userId = #{userId}
 </select>
 
+<select id="idCheck" parameterType="String" resultType="member">
+select userId
+from tb_member
+where userId = #{userId}
+</select>
+
 <select id="memberList" resultType="member">
 select userName, userId, userEmail, userRegdate
 from tb_member

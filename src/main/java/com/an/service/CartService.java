@@ -2,8 +2,7 @@ package com.an.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.an.dao.CartDAO;
@@ -12,7 +11,7 @@ import com.an.dto.CartVO;
 @Service
 public class CartService {
 	
-	@Inject
+	@Autowired
 	CartDAO dao;
 
 	public int countCart(int productId, String userId) {

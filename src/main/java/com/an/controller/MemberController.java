@@ -2,15 +2,16 @@ package com.an.controller;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.an.dto.MemberVO;
@@ -18,7 +19,7 @@ import com.an.service.MemberService;
 
 @Controller
 public class MemberController {
-	@Inject
+	@Autowired
 	private MemberService memberservice;
 	
 	@RequestMapping(value="/login.do")
@@ -36,6 +37,15 @@ public class MemberController {
 		List<MemberVO> mlist = memberservice.memberList();
 		model.addAttribute("mlist", mlist);
 		return "/member/memberList.jsp";
+	}
+	
+	//아이디 체크
+	@ResponseBody
+	@RequestMapping(value="/idCheck.do",method={RequestMethod.GET, RequestMethod.POST})
+	public MemberVO idCheck(@RequestParam("userId") String userId) {
+		System.out.println("idcheck"+userId);
+		MemberVO membervo = memberservice.idCheck(userId);
+		return membervo;
 	}
 	
 	@RequestMapping(value="/loginCheck.do",method={RequestMethod.GET, RequestMethod.POST})

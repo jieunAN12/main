@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.an.dto.MemberVO;
@@ -15,7 +15,7 @@ import com.an.dto.MemberVO;
 @Repository
 public class MemberDAO {
 	
-	@Inject
+	@Autowired
 	private SqlSession sql;
 
 	public int member(MemberVO vo) {
@@ -61,6 +61,12 @@ public class MemberDAO {
 			result = true;
 		}
 		return result;
+	}
+
+	public MemberVO idCheck(String userId) {
+		MemberVO membervo = sql.selectOne("member.idCheck", userId);
+		System.out.println(membervo);
+		return membervo;
 	}
 
 

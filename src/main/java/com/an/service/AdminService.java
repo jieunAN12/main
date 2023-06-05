@@ -1,7 +1,6 @@
 package com.an.service;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.an.dao.AdminDAO;
@@ -10,7 +9,7 @@ import com.an.dto.MemberVO;
 @Service
 public class AdminService {
 
-	@Inject
+	@Autowired
 	AdminDAO dao;
 
 	public String aloginCheck(MemberVO vo) {

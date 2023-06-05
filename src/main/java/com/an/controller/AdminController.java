@@ -1,8 +1,8 @@
 package com.an.controller;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,7 +13,7 @@ import com.an.service.AdminService;
 @Controller
 public class AdminController {
 
-	@Inject
+	@Autowired
 	AdminService adminService;
 	
 	// 1. 관리자  로그인페이지 매핑

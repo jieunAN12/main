@@ -2,9 +2,9 @@ package com.an.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.an.dao.RboardDAO;
@@ -13,7 +13,7 @@ import com.an.dto.BoardVO;
 @Service
 public class RboardService {
 	
-	@Inject
+	@Autowired
 	RboardDAO dao;
 
 	public List<BoardVO> listAll(String searchOption, String keyword, int start, int end) {

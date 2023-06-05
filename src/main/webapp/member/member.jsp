@@ -4,6 +4,7 @@
 
 <%@ include file="../header.jsp"%>
 <title>회원가입</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <body>
 <%@ include file="../body1.jsp" %>
@@ -15,7 +16,9 @@
 		</tr>
 		<tr>
 			<th width="150">아이디</th>
-			<td><input type="text" name="userId" size=30></td>
+			<td><input type="text" name="userId" size=30 value=""><button type="button" id="btnIdCheck">중복체크</button>
+				<p id="idCheckMsg">ㅁㅁㅁ</p>
+			</td>
 		</tr>
 		<tr>
 			<th width="150">비밀번호</th>
@@ -43,5 +46,45 @@
 	</table>
 </form>
 <!-- 본문 끝 -->
+
+<script>
+
+$("#btnIdCheck").on("click", function(){
+	console.log("버튼 클릭")
+	//아이디 추출
+	var id = $("[name=userId]").val();
+	console.log(id);
+	//통신
+	
+	$.ajax({
+		//url : "${path}/main/idCheck.do",
+		url : "${path}/main/idCheck.do?id="+id,
+		type : "post",
+		//contentType : "application/json",
+		data : {id: id},
+		
+		dataType : "json",
+		success : function(data){
+			console.log(data)
+			if(membervo == null){
+				//사용가능
+				$("#idCheckMsg").html(id+"는 사용가능 합니다.");
+			}else{
+				//사용불가능
+				$("#idCheckMsg").html(id+"는 사용불가능 합니다.");
+			} 
+	/*성공시 처리해야될 코드 작성*/
+		},
+		error : function(XHR, status, error) {
+			console.error(status + " : " + error);
+		}
+	});
+	
+	//응답
+	//사용불가능
+ 
+});
+
+</script>
 
 <%@ include file="../footer.jsp"%>

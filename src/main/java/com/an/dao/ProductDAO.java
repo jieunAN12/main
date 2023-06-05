@@ -2,9 +2,8 @@ package com.an.dao;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,7 +12,7 @@ import com.an.dto.ProductVO;
 @Repository
 public class ProductDAO {
 	
-	@Inject
+	@Autowired
 	SqlSession sql;
 
 	public List<ProductVO> listProduct() {
